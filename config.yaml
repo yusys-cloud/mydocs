@@ -19,6 +19,9 @@ markup:
 menu:
   # before: []
   after:
+    - name: "ChatGPT"
+      url: "http://chatgpt.yangzhiqiang.tech"
+      weight: 20
     - name: "Github"
       url: "https://github.com/yusys-cloud/mydocs"
       weight: 10
