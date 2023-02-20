@@ -74,3 +74,24 @@ server {
     rewrite ^(.*)$ https://${server_name}$1 permanent;
 }
 ```
+
+## 配置GitHub workflow 自动发布
+
+### 生产ssh私钥
+```
+ssh-keygen -m PEM -t rsa -b 4096
+```
+
+### 使用ssh发布插件
+```
+	- name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            ARGS: "-rlgoDzvc -i --delete"
+            SOURCE: "./public"
+            REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+            REMOTE_USER: ${{ secrets.REMOTE_USER }}
+            TARGET: ${{ secrets.REMOTE_TARGET }}
+```
+
