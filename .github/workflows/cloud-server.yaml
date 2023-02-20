@@ -25,14 +25,13 @@ jobs:
 
       - name: Build
         run: hugo --minify
-
-      - name: Deploy
-        uses: burnett01/rsync-deployments@5.2
-        with:
-          switches: -avzr --delete
-          path: ./public
-          remote_path: /var/www/html/ # 需要先手动在远程主机创建该目录，否则会执行失败
-          remote_host: ${{ secrets.DEPLOY_HOST }} # 远程主机 IP
-          remote_port: ${{ secrets.DEPLOY_PORT }} # ssh 端口，默认为 22
-          remote_user: ${{ secrets.DEPLOY_USER }} # ssh user
-          remote_key: ${{ secrets.DEPLOY_KEY }} # ssh 私钥
+          
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            ARGS: "-rlgoDzvc -i --delete"
+            SOURCE: "./public"
+            REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+            REMOTE_USER: ${{ secrets.REMOTE_USER }}
+            TARGET: ${{ secrets.REMOTE_TARGET }}
