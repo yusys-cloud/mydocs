@@ -21,13 +21,13 @@ menu:
   after:
     - name: "ChatGPT"
       url: "http://chatgpt.yangzhiqiang.tech"
-      weight: 20
+      weight: 1
     - name: "Github"
       url: "https://github.com/yusys-cloud/mydocs"
       weight: 10
     - name: "OCR"
-      url: "http://orc.yangzhiqiang.tech"
-      weight: 20
+      url: "http://ocr.yangzhiqiang.tech"
+      weight: 2
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.
