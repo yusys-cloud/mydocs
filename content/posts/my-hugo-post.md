@@ -95,3 +95,22 @@ ssh-keygen -m PEM -t rsa -b 4096
             TARGET: ${{ secrets.REMOTE_TARGET }}
 ```
 
+## Ubuntu配置用户
+### 新增用户
+```
+sudo userdel yzq
+sudo useradd yzq -d /home/yzq -m
+cat /etc/passwd | grep yzq
+```
+### 设置/bin/bash
+
+```
+sudo vi /etc/passwd
+```
+
+### 设置账号账号密码可远程登录 PasswordAuthentication一项，将其改为 yes
+
+```
+sudo vim /etc/ssh/sshd_config
+sudo service ssh restart
+```
