@@ -108,6 +108,12 @@ cat /etc/passwd | grep yzq
 sudo vi /etc/passwd
 ```
 
+### 配置sudos yzq ALL=(ALL:ALL) ALL
+
+```
+sudo vi /etc/sudoers
+```
+
 ### 设置账号账号密码可远程登录 PasswordAuthentication一项，将其改为 yes
 
 ```
