@@ -48,11 +48,11 @@ server {
     index index.html;
 
     location / {
-	    add_header Access-Control-Allow-Origin *;
+	add_header Access-Control-Allow-Origin *;
         add_header Access-Control-Allow-Headers X-Requested-With;
         add_header Access-Control-Allow-Methods GET,POST,OPTIONS;
         index index.html;
-        root /wwww/mydocs/public/;
+        root /home/yzq/www/;
      }
     error_page 404               /index.html;
 
@@ -77,12 +77,17 @@ server {
 
 ## 配置GitHub workflow 自动发布
 
-### 生产ssh私钥
+### 服务器ssh私钥
 ```
 ssh-keygen -m PEM -t rsa -b 4096
 ```
+公钥配置到用户authorized_keys中，私钥存放到Gitflow参数 SSH_PRIVATE_KEY
+```
+cat id_rsa.pub > ~/.ssh/authorized_keys
+```
 
 ### 使用ssh发布插件
+REMOTE_TARGET配置生成的静态资源发布目录 /home/yzq/www
 ```
 	- name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
