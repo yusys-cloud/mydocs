@@ -19,3 +19,11 @@ docker load --input images.tar.gz
 - docker run --name mysql -p 3306:3306 -v /home/app/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql:5.7
 - docker run --name mysql -p 3306:3306  -e MYSQL_ROOT_PASSWORD=admin -d mysql:5.7
 - docker run --name nacos -e MODE=standalone -p 8848:8848 -p 9848:9848 -d nacos/nacos-server:2.0.2
+
+docker run --name dagu \
+--rm \
+-p 8080:8080 \
+-v $HOME/.dagu/dags:/home/dagu/.dagu/dags \
+-v $HOME/.dagu/data:/home/dagu/.dagu/data \
+-v $HOME/.dagu/logs:/home/dagu/.dagu/logs \
+yohamta/dagu:latest
