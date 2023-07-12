@@ -13,3 +13,5 @@ sudo tar xzvf apache-maven-3.9.1-bin.tar.gz -C /usr/local
 export MAVEN_HOME=/usr/local/apache-maven-3.9.1
 export PATH=$PATH:$MAVEN_HOME/bin
 ```
+
+## go语言环境安装

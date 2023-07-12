@@ -28,6 +28,8 @@ menu:
     - name: "OCR"
       url: "http://ocr.yangzhiqiang.tech"
       weight: 2
+    - name: "photos"
+      url: "http://photos.yangzhiqiang.tech"  
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.

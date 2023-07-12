@@ -24,6 +24,14 @@ Dagu 无代码工作流执行器。它根据声明性 YAML 定义执行工作流
 ./dagu server
 ./dagu scheduler 
 ```
+增加admin密码,编辑 admin.yaml 
+```
+port: 8080						# default: 8080
+# Basic Auth
+isBasicAuth: true            	# enables basic auth
+basicAuthUsername: yzq       	# basic auth user
+basicAuthPassword: 1314       	# basic auth password
+```
 
 Usecase
 - Data Pipeline Automation: Schedule ETL tasks for data processing and centralization.
@@ -47,3 +55,5 @@ Usecase
 ### 前端workflow
 - https://github.com/BiaoChengLiu/easy-flow
 
+## 后端开发
+- https://github.com/YunaiV/ruoyi-vue-pro
