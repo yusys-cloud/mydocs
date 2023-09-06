@@ -36,6 +36,11 @@ stateDiagram-v2
     end note
     State1 --> State2
     note left of State2 : This is the note to the left.
+graph LR
+    A[Square Rect] -- Link text --> B((Circle))
+    A --> C(Round Rect)
+    B --> D{Rhombus}
+    C --> D    
 {{< /mermaid >}}
 
 {{< /columns >}}
