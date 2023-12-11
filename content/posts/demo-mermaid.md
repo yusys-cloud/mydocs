@@ -81,24 +81,19 @@ graph TD;
     R1[需求1: 实现用户注册功能] --> F1[UserRegisterController]
     R1 --> F2[UserRegisterService]
     R1 --> F3[RegisterValidation]
-    
     R2[需求2: 实现订单支付功能] --> F4[OrderPaymentController]
     R2 --> F5[PaymentService]
     R2 --> F6[PaymentValidation]
-    
     R3[需求3: 实现商品收藏功能] --> F7[FavoriteController]
     R3 --> F8[FavoriteService]
-    
     F1 --> C1[RegisterPage]
     F1 --> C2[RegisterAPI]
     F4 --> C3[PaymentPage]
     F4 --> C4[PaymentAPI]
     F7 --> C5[FavoritePage]
-    
     C1[RegisterPage] --> D1[用户名输入框]
     C1 --> D2[密码输入框]
     C1 --> D3[注册按钮]
-    
     C3[PaymentPage] --> D4[支付金额输入框]
     C3 --> D5[支付按钮]    
 {{< /mermaid >}}
